@@ -1,0 +1,25 @@
+.html5Icon{
+    color:red;
+    padding-right: 10px;
+}
+.css3Icon{
+    color:blue;
+    padding-right: 10px;
+
+}
+.jsIcon{
+    color:rgb(242, 242, 23);
+    padding-right: 10px;
+
+    
+}
+.bootstrapIcon{
+    color:purple;
+    padding-right: 10px;
+
+}
+main>.container {
+    padding: 60px 15px 0;
+    padding-right: 10px;
+
+}

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Mini Site - The dash</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/prism.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">The Dash</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="theDash.html">The App</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  active" href="code.html">Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/harveerhans59/The-Dash">Github Repo</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <main class="flex-shrink-0">
+    <div class="container">
+        <div class="row border-bottom border-3 mt-3 mb-3">
+            <h1>The Code</h1>
+        </div>
+        <div class="row">
+        <div class="col-8"> 
+            <pre class="line-numbers"><code class="language-javascript">
+document.getElementById("btnSubmit").addEventListener("click",getValues);
+//get the values from the page
+//starts or controller function
+
+function getValues(){
+    //get values from the page
+    let startValue = document.getElementById('startNumber').value;
+    let endValue = document.getElementById('endNumber').value;
+    let submitButton = document.getElementById('submitButton');
+                
+     //parse Into integers
+    startValue=parseInt(startValue);
+    endValue = parseInt(endValue);
+                
+    //testing if input is valid
+    if(startValue>=endValue){
+        alert("End value must be greater than start value!");
+    }
+    else if(Number.isInteger(startValue) && Number.isInteger(endValue)){
+        //we call generateNumbers
+        let numbers = generateNumbers(startValue, endValue);
+        displayNumbers(numbers);
+    }
+    else{
+        alert("Only enter numbers!");
+    }
+                
+    //we call displayNumbers
+                    
+    }
+                
+//generate numbers from start value to the endvalue
+//logic function
+function generateNumbers(startValue, endValue){
+    let numbers=[];
+    for(let index=startValue; index<=endValue; index++){
+        numbers.push(index);
+    }
+    return numbers;
+}
+                
+//display the numbers and mark even numbers bold
+//display or view function
+function displayNumbers(numbers){
+                
+    let templateRows="";
+                
+    for (let index = 0;index < numbers.length; index++){
+        //classValue is to decide background color of the values based on if they're even or odd
+        let classValue="";
+                    
+        let number= numbers[index];
+                
+        if(number % 2 == 0){
+            classValue="table-secondary";
+        }else{
+            classValue="";
+        }
+        templateRows += `<tr class="${classValue}"><td>${number}</td></tr>`;
+        }
+    document.getElementById("resultsTable").innerHTML = templateRows;
+}
+                </code>
+            </pre>
+        </div>
+        <div class="col-4">
+            test
+        </div>
+    </div>
+    </div>
+    </main>
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script src="/js/prism.js"></script>
+</body>
+
+</html>
