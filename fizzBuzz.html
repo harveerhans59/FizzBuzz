@@ -20,7 +20,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">The Dash</a>
+        <a class="navbar-brand" href="#">FizzBUZZ</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
                     <a class="nav-link" aria-current="page" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="theDash.html">The App</a>
+                    <a class="nav-link active" href="fizzBuzz.html">The App</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="code.html">Code</a>
@@ -46,15 +46,17 @@
 
 <main class="flex-shrink-0">
    <div class="container">
+
+
        <div class="row row-cols-1 row-cols-lg-12 mt-5">
            <div class="col col-md-5 ">
                 <div class="row mb-4">
-                    <h1>The Dash: A Coding Project</h1>
-                    <h5>Live life one loop at a time. A javascript coding exercise using loops. Write a program the displays the numbers from 0 to 100. Display the even numbers in BOLD.</h5>
+                    <h1>Fizz Buzz: A Coding Project</h1>
+                    <h5>When it counts you Fizz Buzz. A javascript coding exercise using loops. Write a program that prints the numbers from 1 to 100 and for multiples of '3' display "Fizz" instead of the number and for the muiltiples of '5' display "Buzz". If a multiple of both display "FizzBuzz".</h5>
                 </div>
                 <div class="row">
                     <h1 class="border-bottom">Instruction</h1>
-                    <p>Enter a starting value and a ending value. Press the button and the values will appear.</p>
+                    <p>Enter a fizz and a buzz value. Press the button and the values will appear.</p>
                 </div>
            </div>
            <div class="col col-md-7">
@@ -64,10 +66,10 @@
                         <h3>Enter Values</h3>
                     </div>
                     <div class="col-6">
-                        <input id="startNumber" class="form-control" type="number">
+                        <input id="fizz" class="form-control" type="number">
                     </div>
                     <div class="col-6">
-                        <input id="endNumber" class="form-control" type="number">
+                        <input id="buzz" class="form-control" type="number">
                     </div>
                     <div class="col mt-2 d-flex justify-content-end">
                         <button id="btnSubmit" class="btn bg-dark text-light">Display the Dash</button>
@@ -77,8 +79,8 @@
                     <h1 class="border-bottom">Results</h1>
                 </div>
                 <div class="row">
-                    <table class="table" id="resultsTable">
-                        
+                    <table class="table table-striped" id="resultsTable">
+    
                     </table>
                 </div>
            </div>
